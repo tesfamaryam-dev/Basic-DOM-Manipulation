@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Counter App</title>
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Premium Counter</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <!-- social links for refinedguides.com -->
-    <script
-      src="https://refinedguides.com/assets/social.js?linkColor=%23fff&textColor=%23333"
-      defer
-    ></script>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Counter App</h1>
-      <section class="counter">0</section>
+</head>
+<body>
+<div class="container">
+    <h1>Ultimate Premium Counter</h1>
 
-      <section class="buttons">
+    <section class="counter-display">
+        <span id="counter">0</span>
+        <div id="streak">🔥 Streak: 0</div>
+        <div id="level">🏆 Level: 1</div>
+    </section>
+
+    <section class="controls">
         <button id="decrement">Decrement</button>
         <button id="increment">Increment</button>
-        <button id="reset">Reset</button>
-      </section>
+        <button id="reset" class="reset">Reset</button>
+    </section>
 
-      <section class="settings">
+    <section class="settings">
         <p>
-          <label for="startCount">Start Count</label>
-          <input type="number" id="startCount" min="0" value="0" />
+            <label for="startCount">Start Count:</label>
+            <input type="number" id="startCount" min="0" value="0">
         </p>
         <p>
-          <label for="maxCount">Max Count</label>
-          <input type="number" id="maxCount" min="0" value="0" />
+            <label for="maxCount">Max Count:</label>
+            <input type="number" id="maxCount" min="1" value="10">
         </p>
-      </section>
-    </div>
-  </body>
+        <p>
+            <label for="stepValue">Step Value:</label>
+            <select id="stepValue">
+                <option value="1">1</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+        </p>
+        <p>
+            <label for="themeSelect">Theme:</label>
+            <select id="themeSelect">
+                <option value="gradient">Gradient</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </p>
+    </section>
+
+    <section class="history">
+        <h2>History Log</h2>
+        <ul id="historyList"></ul>
+        <button id="clearHistory" class="small">Clear History</button>
+    </section>
+</div>
+
+<canvas id="confetti"></canvas>
+</body>
 </html>

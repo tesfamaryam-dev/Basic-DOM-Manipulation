@@ -1,103 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;500;600;700&display=swap");
 
-* {
-  font-family: "Poppins", sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
+* { box-sizing:border-box;margin:0;padding:0; }
 body {
-  color: #fff;
-  background: #7f00ff;
-  background: linear-gradient(to bottom, #7f00ff, #e100ff);
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family:'Poppins', sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    background:linear-gradient(-45deg,#ff6ec4,#7873f5,#4ade80,#ffeb3b);
+    background-size:400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color:#fff;
+    transition: background 0.5s, color 0.5s;
 }
-
-h1 {
-  margin-top: 1.5rem;
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
-
-button {
-  font-size: 1rem;
-  background: #7f00ff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
-  height: 48px;
-  border-radius: 24px;
-  touch-action: manipulation;
-}
-
-button:hover {
-  filter: hue-rotate(25deg);
-}
-
-button:disabled {
-  pointer-events: none;
-  filter: saturate(60%);
-}
-
-input {
-  outline: none;
-  border: none;
-  text-align: center;
-  width: 60px;
-  height: 28px;
-  border-radius: 14px;
-  font-weight: 500;
-  color: #7f00ff;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
-  -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.container {
-  width: min(420px, 90%);
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.counter {
-  font-size: clamp(10em, 16em, 14em);
-  font-weight: 500;
-  line-height: 1.5;
-  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
-}
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-}
-
-.buttons button:nth-child(-n + 2) {
-  width: calc(50% - 10px);
-}
-
-.buttons button:last-child {
-  width: 100%;
-}
-
-.settings {
-  width: 100%;
-}
-
-.settings p {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
+h1{margin:1rem;text-align:center;font-family:'Press Start 2P', cursive;}
+.container{width:min(500px,95%);display:flex;flex-direction:column;gap:1rem;align-items:center;}
+.counter-display{font-size:clamp(4rem,10vw,8rem);font-weight:700;text-shadow:0 3px 6px rgba(0,0,0,0.25);transition: transform 0.2s ease;}
+#streak,#level{font-size:1rem;margin-top:0.25rem;}
+.controls{display:flex;gap:15px;flex-wrap:wrap;width:100%;}
+button{padding:0.7rem 1rem;border:none;border-radius:12px;font-weight:600;cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,0.25);flex:1 1 calc(33% - 10px);transition: transform 0.1s,filter 0.3s;}
+button:hover{filter:hue-rotate(20deg);}
+button:active{transform:scale(0.95);}
+button:disabled{filter:saturate(50%);pointer-events:none;}
+button.reset{background:#ff4444;color:#fff;}
+.settings{width:100%;display:flex;flex-direction:column;gap:0.5rem;}
+.settings p{display:flex;justify-content:space-between;align-items:center;}
+input,select{width:60px;height:28px;border-radius:14px;text-align:center;border:none;outline:none;font-weight:500;color:#333;}
+.history{width:100%;background:rgba(0,0,0,0.2);border-radius:12px;padding:10px;}
+.history h2{font-size:1rem;margin-bottom:0.25rem;}
+.history ul{list-style:none;max-height:150px;overflow-y:auto;margin-bottom:0.5rem;}
+.history li{font-size:0.85rem;margin-bottom:0.25rem;}
+button.small{flex:none;padding:5px 10px;font-size:0.85rem;}
+body.light{background:#f1f1f1;color:#333;}
+body.light input,body.light select{color:#333;}
+body.dark{background:#222;color:#fff;}
+body.dark input,body.dark select{color:#fff;}
